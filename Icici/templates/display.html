@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+
+    <meta charset="UTF-8">
+    <title>Display Data</title>
+</head>
+<body>
+    <center>
+        <h>Employee Display Details</h>
+        <table border="1">
+            <tr>
+                <th>id</th>
+                <th>name</th>
+                <th>age</th>
+                <th>designation</th>
+                <th>doj</th>
+                <th>action</th>
+            </tr>
+            {% for result in data %}
+            <tr>
+                <td>{{result.id}}</td>
+                <td>{{result.name}}</td>
+                <td>{{result.age}}</td>
+                <td>{{result.designation}}</td>
+                <td>{{result.doj}}</td>
+                <td>
+                    <a href="{% url 'update' result.id %}"  class="btn-btn warning btn-sm">Edit </a>
+
+
+                    <form action="{% url 'delete' result.id %}"
+                          method="POST" class="d-inline">{%csrf_token%}
+                        <input type="submit" class="btn-btn danger"
+                               value="Delete">
+</form>
+
+
+
+
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </center>
+</body>
+</html>
+
