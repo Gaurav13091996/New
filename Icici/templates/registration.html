@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee Registration </title>
+
+</head>
+<body>
+  <div style="text-align:center">
+      <div class="jumbotron">
+<h1>Employee Registration</h1>
+<form action="" method="POST" validate>
+    <div style="text-align:center">
+         <div class="row valign">
+
+        {% csrf_token %}
+
+        <div class="container">
+            {{form.as_p}}
+
+
+            <button type="submit"class="btn btn-primary"> Submit</button>
+
+
+</form>
+</body>
+</html>
+
+
+<!--<input type="submit"value="Submit">-->
